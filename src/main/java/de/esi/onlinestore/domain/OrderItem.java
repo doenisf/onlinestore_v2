@@ -43,7 +43,6 @@ public class OrderItem implements Serializable {
         this.id = id;
     }
 
-    @Id
     public Long getId() {
         return id;
     }
