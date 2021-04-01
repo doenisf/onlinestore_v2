@@ -48,9 +48,9 @@ public class CustomerController {
     }
 
     @GetMapping("/customers")
-    public List<Customer> getAllCustomers() {
+    public ResponseEntity<List<Customer>> getAllCustomers() {
         log.debug("REST request to get all customers.");
-        return customerService.findAll();
+        return ResponseEntity.ok(customerService.findAll());
     }
 
     @GetMapping("/customers/{id}")

@@ -44,9 +44,9 @@ public class OrderItemController {
     }
 
     @GetMapping("/order-items")
-    public List<OrderItem> getAllOrderItems() {
+    public ResponseEntity<List<OrderItem>> getAllOrderItems() {
         log.debug("REST request to get all Order Items.");
-        return orderItemService.findAll();
+        return ResponseEntity.ok(orderItemService.findAll());
     }
 
     @GetMapping("/order-items/{id}")

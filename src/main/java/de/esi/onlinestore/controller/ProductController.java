@@ -44,9 +44,9 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public List<Product> getAllProducts() {
+    public ResponseEntity<List<Product>> getAllProducts() {
         log.debug("REST request to get all products.");
-        return productService.findAll();
+        return ResponseEntity.ok(productService.findAll());
     }
 
     @GetMapping("/products/{id}")
